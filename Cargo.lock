@@ -1307,7 +1307,7 @@ dependencies = [
 
 [[package]]
 name = "clockwork-thread-program-v1"
-version = "2.0.2"
+version = "1.4.4"
 dependencies = [
  "anchor-lang",
  "clockwork-anchor-gen",
