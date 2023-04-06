@@ -2,11 +2,17 @@ use std::io::Write;
 
 #[allow(deprecated)]
 use {
-    crate::{errors::CliError, parser::ProgramInfo},
+    crate::{
+        errors::CliError,
+        parser::ProgramInfo,
+    },
     anyhow::Result,
     clockwork_client::{
         network::state::ConfigSettings,
-        thread::state::{Thread, Trigger},
+        thread::state::{
+            Thread,
+            Trigger,
+        },
         Client,
     },
     regex::Regex,
@@ -14,15 +20,28 @@ use {
         native_token::LAMPORTS_PER_SOL,
         program_pack::Pack,
         pubkey::Pubkey,
-        signature::{read_keypair_file, Keypair, Signer},
+        signature::{
+            read_keypair_file,
+            Keypair,
+            Signer,
+        },
         system_instruction,
     },
-    spl_associated_token_account::{create_associated_token_account, get_associated_token_address},
+    spl_associated_token_account::{
+        create_associated_token_account,
+        get_associated_token_address,
+    },
     spl_token::{
-        instruction::{initialize_mint, mint_to},
+        instruction::{
+            initialize_mint,
+            mint_to,
+        },
         state::Mint,
     },
-    std::process::{Child, Command},
+    std::process::{
+        Child,
+        Command,
+    },
 };
 
 pub fn start(

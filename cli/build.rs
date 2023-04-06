@@ -1,5 +1,10 @@
-use cargo_toml::{Dependency, Manifest};
-use regex::Regex;
+use {
+    cargo_toml::{
+        Dependency,
+        Manifest,
+    },
+    regex::Regex,
+};
 
 fn main() {
     let geyser_interface_version = get_geyser_interface_version();
@@ -26,8 +31,9 @@ fn get_geyser_interface_version() -> String {
     re.captures(&semver)
         .unwrap()
         .get(1)
-        .map_or("unknown (error parsing solana-geyser-plugin-interface version)", |m| {
-            m.as_str()
-        })
+        .map_or(
+            "unknown (error parsing solana-geyser-plugin-interface version)",
+            |m| m.as_str(),
+        )
         .into()
 }
